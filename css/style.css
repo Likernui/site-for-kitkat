@@ -1,0 +1,112 @@
+body {
+    background: linear-gradient(to bottom, #B0E0E6, #87CEEB); /* От светло-голубого к голубому */
+    margin: 0; /* Убирает отступы, чтобы фон покрывал весь экран */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 15px;
+}
+.header__list {
+    font-size: 28px;
+    display: flex;
+    gap: 200px;
+}
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn{
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    background: #d3f8ff;
+    border-radius: 15px;
+    color: #db7093;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover{
+    font-size:30px;
+}
+
+.welcome {
+    margin-top:200px;
+}
+.welcome img {
+    max-width: 45%;
+}
+.welcome__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.welcome__p {
+    display: flex;
+    flex-direction: column;;
+    align-items: flex-start; /* Выровнять текст по левому краю */
+    margin-right: 100px; /* Добавить отступ справа для текста */
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+  /* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+  /* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+  /* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+  /* Style the back side */
+.flip-card-back {
+    background-color: #fff;
+    color: black;
+    transform: rotateY(180deg);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+}
+.cards .container {
+    margin-top: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
+    gap: 50px; /* Расстояние между карточками */
+}
